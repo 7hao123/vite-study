@@ -1,0 +1,30 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "server": "node server.js",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "vue-tsc -b && vite build --outDir dist/server --ssr src/entry-server.js",
+    "build:client": "vue-tsc -b && vite build  --outDir dist/client ",
+    "build:static": "node build-static.js",
+    "preview:static": "npx serve dist-static",
+    "generate": "node server-static.js",
+    "preview": "vite preview",
+    "test": "vite --mode test"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "vue": "^3.5.24"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/tsconfig": "^0.8.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4",
+    "vue-tsc": "^3.1.4"
+  }
+}
