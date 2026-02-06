@@ -1,0 +1,4 @@
+vite插件的hooks
+options 
+buildStart
+当启动dev-server的时候调用
