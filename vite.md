@@ -31,7 +31,7 @@ vite插件的hooks
 options 
 buildStart
 当启动dev-server的时候调用
-vite 插件开发 
 resolveId 找到对应的文件源码
 load   进行加载
 transform 对源码进行转换
+vite的插件执行和请求编译是只有请求了才去进行的而不是在我们项目启动之后所有文件去编译
