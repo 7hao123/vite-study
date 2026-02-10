@@ -1,4 +1,0 @@
-rollup 是JavaScript打包器
-webpack 也是javascript打包器
-esbuild是编译器（parse+transformer）+轻量bundler
-webpack借助 babel-loader来parser+transformer生成ast转换
