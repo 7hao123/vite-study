@@ -2,19 +2,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 const path = require("path");
 const { stat } = require("fs");
+const { split } = require("lodash");
 
 module.exports = {
   mode: "development",
   entry: {
-    index: {
-      import: "./src/index.js",
-      dependOn: "shared",
-    },
-    another: {
-      import: "./src/another-module.js",
-      dependOn: "shared",
-    },
-    shared: "lodash",
+    index: "./src/index.js",
+    another: "./src/another-module.js",
   },
   devtool: "inline-source-map",
   devServer: {
@@ -27,7 +21,9 @@ module.exports = {
     publicPath: "/",
   },
   optimization: {
-    runtimeChunk: "single",
+    splitChunks: {
+      chunks: "all",
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({ title: "Development" }),
