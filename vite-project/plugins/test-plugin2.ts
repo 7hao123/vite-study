@@ -16,6 +16,7 @@ export default (enforce?: "pre" | "post") => {
     // configResolved(resolvedConfig) {
     //   console.log("configResolved", resolvedConfig.resolve);
     // },
+
     configureServer(server) {
       //   console.log("configureServer", server);
       server.middlewares.use((req, res, next) => {
@@ -24,6 +25,20 @@ export default (enforce?: "pre" | "post") => {
         } else {
           next();
         }
+      });
+    },
+
+    transformIndexHtml(html) {
+      return html.replace(
+        "</head>",
+        `<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script></head>`,
+      );
+    },
+    handleHotUpdate(ctx) {
+      console.log("handleHotUpdate", ctx);
+      ctx.server.ws.send({
+        type: "custom",
+        event: "test",
       });
     },
   };
