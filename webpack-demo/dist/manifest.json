@@ -1,6 +1,5 @@
 {
   "index.js": "/index.bundle.js",
-  "another.js": "/another.bundle.js",
   "vendors-node_modules_pnpm_lodash_4_17_23_node_modules_lodash_lodash_js.bundle.js": "/vendors-node_modules_pnpm_lodash_4_17_23_node_modules_lodash_lodash_js.bundle.js",
   "index.html": "/index.html"
 }
